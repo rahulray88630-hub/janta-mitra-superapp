@@ -1,34 +1,122 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>जनता मित्र ऐप</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="style.css">
-  <script type="module" src="app.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>जनता मित्र ऐप</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="app.js"></script>
+    <style>
+        .tab-button.active {
+            background-color: #e2e8f0;
+            border-bottom: 3px solid #3b82f6;
+            font-weight: 600;
+            color: #1e40af;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+    </style>
 </head>
 <body class="p-4 bg-gray-200">
-  <div class="max-w-4xl mx-auto bg-gray-50 rounded-xl shadow-lg overflow-hidden">
-    <div class="p-4 bg-white border-b border-gray-200">
-      <h1 class="text-3xl font-bold text-center text-blue-600">जनता मित्र</h1>
-      <p class="text-sm text-center text-gray-500 mt-1">आपकी सभी ज़रूरतों के लिए एक ही ऐप</p>
-    </div>
+    <div class="max-w-4xl mx-auto bg-gray-50 rounded-xl shadow-lg overflow-hidden">
+        <div class="p-4 bg-white border-b border-gray-200">
+            <h1 class="text-3xl font-bold text-center text-blue-600">जनता मित्र</h1>
+            <p class="text-sm text-center text-gray-500 mt-1">आपकी सभी ज़रूरतों के लिए एक ही ऐप</p>
+        </div>
 
-    <div class="bg-white border-b border-gray-200 flex flex-wrap justify-center sm:justify-start">
-      <button class="tab-button active" data-tab="tab-rozgar">रोजगार & कौशल</button>
-      <button class="tab-button" data-tab="tab-solar">सोलर ROI</button>
-    </div>
+        <div class="bg-white border-b border-gray-200 flex flex-wrap justify-center sm:justify-start">
+            <button class="tab-button active p-4 text-center text-gray-600 hover:bg-gray-100 transition duration-300 ease-in-out" data-tab="tab-rozgar">रोजगार & कौशल</button>
+            <button class="tab-button p-4 text-center text-gray-600 hover:bg-gray-100 transition duration-300 ease-in-out" data-tab="tab-solar">सोलर ROI</button>
+            <button class="tab-button p-4 text-center text-gray-600 hover:bg-gray-100 transition duration-300 ease-in-out" data-tab="tab-loans">लोन उपकरण</button>
+            <button class="tab-button p-4 text-center text-gray-600 hover:bg-gray-100 transition duration-300 ease-in-out" data-tab="tab-shopping">स्मार्ट शॉपिंग</button>
+            <button class="tab-button p-4 text-center text-gray-600 hover:bg-gray-100 transition duration-300 ease-in-out" data-tab="tab-health">स्वास्थ्य & कृषि</button>
+            <button class="tab-button p-4 text-center text-gray-600 hover:bg-gray-100 transition duration-300 ease-in-out" data-tab="tab-daily-help">दैनिक सहायता</button>
+            <button class="tab-button p-4 text-center text-gray-600 hover:bg-gray-100 transition duration-300 ease-in-out" data-tab="tab-delivery">डिलीवरी सेवाएं</button>
+            <button class="tab-button p-4 text-center text-gray-600 hover:bg-gray-100 transition duration-300 ease-in-out" data-tab="tab-carbon">कार्बन ट्रैकर</button>
+            <button class="tab-button p-4 text-center text-gray-600 hover:bg-gray-100 transition duration-300 ease-in-out" data-tab="tab-entertainment">मनोरंजन</button>
+            <button class="tab-button p-4 text-center text-gray-600 hover:bg-gray-100 transition duration-300 ease-in-out" data-tab="tab-repairing">रिपेयरिंग सेवाएं</button>
+            <button class="tab-button p-4 text-center text-gray-600 hover:bg-gray-100 transition duration-300 ease-in-out" data-tab="tab-wellness">हेल्थ & वेलनेस</button>
+            <button class="tab-button p-4 text-center text-gray-600 hover:bg-gray-100 transition duration-300 ease-in-out" data-tab="tab-consult">प्रोफ़ेशनल सलाह</button>
+            <button class="tab-button p-4 text-center text-gray-600 hover:bg-gray-100 transition duration-300 ease-in-out" data-tab="tab-legal">कानूनी सहायता</button>
+            <button class="tab-button p-4 text-center text-gray-600 hover:bg-gray-100 transition duration-300 ease-in-out" data-tab="tab-tax">कर गाइड</button>
+            <button class="tab-button p-4 text-center text-gray-600 hover:bg-gray-100 transition duration-300 ease-in-out" data-tab="tab-weather">मौसम & सलाह</button>
+            <button class="tab-button p-4 text-center text-gray-600 hover:bg-gray-100 transition duration-300 ease-in-out" data-tab="tab-education">शैक्षणिक मार्गदर्शक</button>
+            <button class="tab-button p-4 text-center text-gray-600 hover:bg-gray-100 transition duration-300 ease-in-out" data-tab="tab-business">व्यापार और निवेश</button>
+            <button class="tab-button p-4 text-center text-gray-600 hover:bg-gray-100 transition duration-300 ease-in-out" data-tab="tab-notifications">महत्वपूर्ण सूचनाएँ</button>
+            <button class="tab-button p-4 text-center text-gray-600 hover:bg-gray-100 transition duration-300 ease-in-out" data-tab="tab-leads">लाइव लीड्स</button>
+            <button class="tab-button p-4 text-center text-gray-600 hover:bg-gray-100 transition duration-300 ease-in-out" data-tab="tab-interview">नौकरी की तैयारी</button>
+            <button class="tab-button p-4 text-center text-gray-600 hover:bg-gray-100 transition duration-300 ease-in-out" data-tab="tab-finance">वित्तीय योजना</button>
+            <button class="tab-button p-4 text-center text-gray-600 hover:bg-gray-100 transition duration-300 ease-in-out" data-tab="tab-small-business">छोटे व्यवसाय</button>
+            <button class="tab-button p-4 text-center text-gray-600 hover:bg-gray-100 transition duration-300 ease-in-out" data-tab="tab-recipes">खाना और रेसिपी</button>
+            <button class="tab-button p-4 text-center text-gray-600 hover:bg-gray-100 transition duration-300 ease-in-out" data-tab="tab-language">भाषा सहायक</button>
+            <button class="tab-button p-4 text-center text-gray-600 hover:bg-gray-100 transition duration-300 ease-in-out" data-tab="tab-insurance">बीमा केंद्र</button>
+            <button class="tab-button p-4 text-center text-gray-600 hover:bg-gray-100 transition duration-300 ease-in-out" data-tab="tab-emergency">आपातकालीन सेवाएं</button>
+            <button class="tab-button p-4 text-center text-gray-600 hover:bg-gray-100 transition duration-300 ease-in-out" data-tab="tab-home-mgmt">घरेलू प्रबंधन</button>
+            <button class="tab-button p-4 text-center text-gray-600 hover:bg-gray-100 transition duration-300 ease-in-out" data-tab="tab-travel">यात्रा & आवास</button>
+            <button class="tab-button p-4 text-center text-gray-600 hover:bg-gray-100 transition duration-300 ease-in-out" data-tab="tab-edu-rozgar">रोज़गार और शिक्षा</button>
+            <button class="tab-button p-4 text-center text-gray-600 hover:bg-gray-100 transition duration-300 ease-in-out" data-tab="tab-passion">व्यक्तित्व और करियर</button>
+            <button class="tab-button p-4 text-center text-gray-600 hover:bg-gray-100 transition duration-300 ease-in-out" data-tab="tab-property">संपत्ति केंद्र</button>
+            <button class="tab-button p-4 text-center text-gray-600 hover:bg-gray-100 transition duration-300 ease-in-out" data-tab="tab-digital-id">डिजिटल पहचान</button>
+            <button class="tab-button p-4 text-center text-gray-600 hover:bg-gray-100 transition duration-300 ease-in-out" data-tab="tab-creative">संस्कृति & रचनात्मकता</button>
+            <button class="tab-button p-4 text-center text-gray-600 hover:bg-gray-100 transition duration-300 ease-in-out" data-tab="tab-gig-services">गिग सेवाएँ</button>
+            <button class="tab-button p-4 text-center text-gray-600 hover:bg-gray-100 transition duration-300 ease-in-out" data-tab="tab-home-family">घर & परिवार</button>
+            <button class="tab-button p-4 text-center text-gray-600 hover:bg-gray-100 transition duration-300 ease-in-out" data-tab="tab-digital-tools">डिजिटल टूल्स</button>
+            <button class="tab-button p-4 text-center text-gray-600 hover:bg-gray-100 transition duration-300 ease-in-out" data-tab="tab-women-empowerment">महिला सशक्तिकरण</button>
+            <button class="tab-button p-4 text-center text-gray-600 hover:bg-gray-100 transition duration-300 ease-in-out" data-tab="tab-ai-diagnosis">AI डायग्नोसिस</button>
+            <button class="tab-button p-4 text-center text-gray-600 hover:bg-gray-100 transition duration-300 ease-in-out" data-tab="tab-local-biz">स्थानीय व्यवसाय</button>
+            <button class="tab-button p-4 text-center text-gray-600 hover:bg-gray-100 transition duration-300 ease-in-out" data-tab="tab-digital-wallet">डिजिटल वॉलेट</button>
+            <button class="tab-button p-4 text-center text-gray-600 hover:bg-gray-100 transition duration-300 ease-in-out" data-tab="tab-video-finder">वीडियो खोज</button>
+            <button class="tab-button p-4 text-center text-gray-600 hover:bg-gray-100 transition duration-300 ease-in-out" data-tab="tab-manager-dashboard">मैनेजर डैशबोर्ड</button>
+        </div>
 
-    <div class="p-4 sm:p-8">
-      <div id="tab-rozgar" class="tab-content active">
-        <h2 class="text-2xl font-bold text-center text-green-600 mb-6">रोजगार खोजक</h2>
-      </div>
-
-      <div id="tab-solar" class="tab-content">
-        <h2 class="text-2xl font-bold text-center text-yellow-600 mb-6">सोलर ROI Calculator</h2>
-      </div>
+        <div class="p-4 sm:p-8">
+            <div id="tab-rozgar" class="tab-content active">...</div>
+            <div id="tab-solar" class="tab-content">...</div>
+            <div id="tab-loans" class="tab-content">...</div>
+            <div id="tab-shopping" class="tab-content">...</div>
+            <div id="tab-health" class="tab-content">...</div>
+            <div id="tab-daily-help" class="tab-content">...</div>
+            <div id="tab-delivery" class="tab-content">...</div>
+            <div id="tab-carbon" class="tab-content">...</div>
+            <div id="tab-entertainment" class="tab-content">...</div>
+            <div id="tab-repairing" class="tab-content">...</div>
+            <div id="tab-wellness" class="tab-content">...</div>
+            <div id="tab-consult" class="tab-content">...</div>
+            <div id="tab-legal" class="tab-content">...</div>
+            <div id="tab-tax" class="tab-content">...</div>
+            <div id="tab-weather" class="tab-content">...</div>
+            <div id="tab-education" class="tab-content">...</div>
+            <div id="tab-business" class="tab-content">...</div>
+            <div id="tab-notifications" class="tab-content">...</div>
+            <div id="tab-leads" class="tab-content">...</div>
+            <div id="tab-interview" class="tab-content">...</div>
+            <div id="tab-finance" class="tab-content">...</div>
+            <div id="tab-small-business" class="tab-content">...</div>
+            <div id="tab-recipes" class="tab-content">...</div>
+            <div id="tab-language" class="tab-content">...</div>
+            <div id="tab-insurance" class="tab-content">...</div>
+            <div id="tab-emergency" class="tab-content">...</div>
+            <div id="tab-home-mgmt" class="tab-content">...</div>
+            <div id="tab-travel" class="tab-content">...</div>
+            <div id="tab-edu-rozgar" class="tab-content">...</div>
+            <div id="tab-passion" class="tab-content">...</div>
+            <div id="tab-property" class="tab-content">...</div>
+            <div id="tab-digital-id" class="tab-content">...</div>
+            <div id="tab-creative" class="tab-content">...</div>
+            <div id="tab-gig-services" class="tab-content">...</div>
+            <div id="tab-home-family" class="tab-content">...</div>
+            <div id="tab-digital-tools" class="tab-content">...</div>
+            <div id="tab-women-empowerment" class="tab-content">...</div>
+            <div id="tab-ai-diagnosis" class="tab-content">...</div>
+            <div id="tab-local-biz" class="tab-content">...</div>
+            <div id="tab-digital-wallet" class="tab-content">...</div>
+            <div id="tab-video-finder" class="tab-content">...</div>
+            <div id="tab-manager-dashboard" class="tab-content">...</div>
+        </div>
     </div>
-  </div>
 </body>
 </html>
